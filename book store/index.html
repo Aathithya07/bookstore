@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Bookstore</title>
+</head>
+<body>
+    <header>
+        <h1>Online Bookstore</h1>
+        <nav>
+            <a href="#books">Books</a>
+            <a href="#cart">Cart</a>
+            <a href="#login">Login</a>
+        </nav>
+    </header>
+
+    <section id="books">
+        <h2>Available Books</h2>
+        <div class="book">
+            <img src="book1.jpg" alt="Book Title 1">
+            <h3>Book Title 1</h3>
+            <p>Author: Author 1</p>
+            <p>Price: $10</p>
+            <input type="number" min="1" value="1" id="qty1">
+            <button onclick="addToCart('Book Title 1', 10, document.getElementById('qty1').value)">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="book2.jpg" alt="Book Title 2">
+            <h3>Book Title 2</h3>
+            <p>Author: Author 2</p>
+            <p>Price: $15</p>
+            <input type="number" min="1" value="1" id="qty2">
+            <button onclick="addToCart('Book Title 2', 15, document.getElementById('qty2').value)">Add to Cart</button>
+        </div>
+    </section>
+
+    <section id="cart">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p>Total: <span id="total-price">$0</span></p>
+        <button onclick="checkout()">Checkout</button>
+    </section>
+
+    <section id="login">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Delivery Location: <input type="text" id="delivery-location"></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
